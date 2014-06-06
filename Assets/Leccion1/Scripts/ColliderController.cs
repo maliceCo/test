@@ -1,25 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ColliderController : MonoBehaviour 
+public class ColliderController : MonoBehaviour
 {
     public Transform door;
     private bool open = false;
-	
-	void Update () 
+
+    void Update()
     {
         if (open)
         {
-            door.position = new Vector3(door.position.x, door.position.y, door.position.z + 5.2f * Time.deltaTime);
+            door.position = new Vector3(door.position.x + 5.2f * Time.deltaTime, door.position.y, door.position.z);
 
-            if (door.position.z >= 2.7f)
+            if (door.position.x >= 2.7f)
                 open = false;
         }
-	}
+    }
 
-    void OnTriggerEnter ()
+    void OnTriggerEnter()
     {
         open = true;
-        Debug.Log("Abrir puerta"); 
+        Debug.Log("Abrir puerta");
     }
 }
