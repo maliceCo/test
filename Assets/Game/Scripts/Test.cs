@@ -11,7 +11,6 @@ public class Test : MonoBehaviour
     void Start()
     {
         enemigos.Add("Licantropo");
-
         Debug.Log(enemigo);
     }
 }
